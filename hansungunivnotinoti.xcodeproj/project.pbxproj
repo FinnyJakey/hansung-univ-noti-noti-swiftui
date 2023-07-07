@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		72726EA52A4AA9EB008D40D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72726EA42A4AA9EB008D40D5 /* AppDelegate.swift */; };
-		72726EA72A4AAF04008D40D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72726EA62A4AAF04008D40D5 /* GoogleService-Info.plist */; };
 		727962632A5657CC00F398BF /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 727962622A5657CC00F398BF /* SwiftSoup */; };
 		727962652A565A0300F398BF /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727962642A565A0300F398BF /* ScheduleViewModel.swift */; };
 		727962692A56B3E100F398BF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727962682A56B3E000F398BF /* Schedule.swift */; };
 		72AD38E02A4AF01100737D31 /* KeywordsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD38DF2A4AF01100737D31 /* KeywordsViewModel.swift */; };
+		72B7CBFB2A57D63100E80D6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72B7CBFA2A57D63100E80D6D /* GoogleService-Info.plist */; };
 		72CDEEC62A4A7B3300FCABD2 /* hansungunivnotinotiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDEEC52A4A7B3300FCABD2 /* hansungunivnotinotiApp.swift */; };
 		72CDEEC82A4A7B3300FCABD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDEEC72A4A7B3300FCABD2 /* ContentView.swift */; };
 		72CDEECA2A4A7B3300FCABD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72CDEEC92A4A7B3300FCABD2 /* Assets.xcassets */; };
@@ -48,10 +48,10 @@
 
 /* Begin PBXFileReference section */
 		72726EA42A4AA9EB008D40D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		72726EA62A4AAF04008D40D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		727962642A565A0300F398BF /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		727962682A56B3E000F398BF /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		72AD38DF2A4AF01100737D31 /* KeywordsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsViewModel.swift; sourceTree = "<group>"; };
+		72B7CBFA2A57D63100E80D6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72CDEEC22A4A7B3300FCABD2 /* hansungunivnotinoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hansungunivnotinoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72CDEEC52A4A7B3300FCABD2 /* hansungunivnotinotiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hansungunivnotinotiApp.swift; sourceTree = "<group>"; };
 		72CDEEC72A4A7B3300FCABD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 		72CDEEC42A4A7B3300FCABD2 /* hansungunivnotinoti */ = {
 			isa = PBXGroup;
 			children = (
+				72B7CBFA2A57D63100E80D6D /* GoogleService-Info.plist */,
 				72CDEF1D2A4A931000FCABD2 /* hansungunivnotinoti.entitlements */,
-				72726EA62A4AAF04008D40D5 /* GoogleService-Info.plist */,
 				72CDEED32A4A7BAC00FCABD2 /* Info.plist */,
 				72CDEED42A4A7C0900FCABD2 /* CoreData */,
 				72CDEED72A4A7C1500FCABD2 /* ViewModel */,
@@ -340,7 +340,7 @@
 			files = (
 				72CDEECD2A4A7B3300FCABD2 /* Preview Assets.xcassets in Resources */,
 				72CDEECA2A4A7B3300FCABD2 /* Assets.xcassets in Resources */,
-				72726EA72A4AAF04008D40D5 /* GoogleService-Info.plist in Resources */,
+				72B7CBFB2A57D63100E80D6D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,9 +525,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.finnyjakey.hansungunivnotinoti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -557,9 +560,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.finnyjakey.hansungunivnotinoti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
