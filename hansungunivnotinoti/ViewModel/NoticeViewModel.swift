@@ -21,12 +21,12 @@ class NoticeViewModel: ObservableObject {
     
     var page: Int = 0
     
-    func fetchData() async {
+    func fetchData(_ rows: Int = 50, _ keyword: String? = nil) async {
         DispatchQueue.main.async {
             self.state = .loading
         }
         
-        guard let url = URL(string: "https://hansung.ac.kr/bbs/hansung/143/rssList.do?row=50&page=\(page.increase())") else {
+        guard let url = URL(string: "https://hansung.ac.kr/bbs/hansung/143/rssList.do?row=\(rows)&page=\(page.increase())") else {
             return
         }
         
@@ -41,8 +41,14 @@ class NoticeViewModel: ObservableObject {
             return
             
         }
-        
+                
         DispatchQueue.main.async {
+            if keyword != nil {
+                self.noticeItems = self.noticeItems.filter {
+                    $0.title.localizedStandardContains(keyword!) || $0.description.localizedStandardContains(keyword!)
+                }
+            }
+            
             self.state = .loaded
         }
     }

@@ -44,6 +44,11 @@
 		72CDEF182A4A92F500FCABD2 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 72CDEF172A4A92F500FCABD2 /* FirebaseDatabaseSwift */; };
 		72CDEF1A2A4A92F500FCABD2 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 72CDEF192A4A92F500FCABD2 /* FirebaseFunctions */; };
 		72CDEF1C2A4A92F500FCABD2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 72CDEF1B2A4A92F500FCABD2 /* FirebaseMessaging */; };
+		72EE69E72A750943009BA483 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EE69E62A750943009BA483 /* ToastView.swift */; };
+		72EE69E92A750962009BA483 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EE69E82A750962009BA483 /* Toast.swift */; };
+		72EE69EB2A75097D009BA483 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EE69EA2A75097D009BA483 /* ToastModifier.swift */; };
+		72EE69ED2A750993009BA483 /* ToastStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EE69EC2A750993009BA483 /* ToastStyle.swift */; };
+		72EE69F12A750A2F009BA483 /* ToastViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EE69F02A750A2F009BA483 /* ToastViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +86,11 @@
 		72CDEEFF2A4A7C2400FCABD2 /* KeywordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeywordView.swift; sourceTree = "<group>"; };
 		72CDEF012A4A7C2400FCABD2 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		72CDEF1D2A4A931000FCABD2 /* hansungunivnotinoti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hansungunivnotinoti.entitlements; sourceTree = "<group>"; };
+		72EE69E62A750943009BA483 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		72EE69E82A750962009BA483 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		72EE69EA2A75097D009BA483 /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
+		72EE69EC2A750993009BA483 /* ToastStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastStyle.swift; sourceTree = "<group>"; };
+		72EE69F02A750A2F009BA483 /* ToastViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +197,7 @@
 		72CDEEEB2A4A7C2400FCABD2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				72EE69E22A7501CA009BA483 /* Others */,
 				72CDEEEC2A4A7C2400FCABD2 /* Schedule */,
 				72CDEEEE2A4A7C2400FCABD2 /* Favorites */,
 				72CDEEF02A4A7C2400FCABD2 /* WebView */,
@@ -266,6 +277,26 @@
 				72CDEF012A4A7C2400FCABD2 /* SettingView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		72EE69E22A7501CA009BA483 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				72EE69E52A75092B009BA483 /* Toast */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		72EE69E52A75092B009BA483 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				72EE69E62A750943009BA483 /* ToastView.swift */,
+				72EE69E82A750962009BA483 /* Toast.swift */,
+				72EE69EA2A75097D009BA483 /* ToastModifier.swift */,
+				72EE69EC2A750993009BA483 /* ToastStyle.swift */,
+				72EE69F02A750A2F009BA483 /* ToastViewExtension.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,15 +383,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				72CDEF062A4A7C2400FCABD2 /* JongNoArriveView.swift in Sources */,
+				72EE69ED2A750993009BA483 /* ToastStyle.swift in Sources */,
 				72AD38E02A4AF01100737D31 /* KeywordsViewModel.swift in Sources */,
 				72CDEF0C2A4A7C2400FCABD2 /* BusView.swift in Sources */,
 				72CDEEE82A4A7C2000FCABD2 /* Bus.swift in Sources */,
+				72EE69E72A750943009BA483 /* ToastView.swift in Sources */,
 				727962652A565A0300F398BF /* ScheduleViewModel.swift in Sources */,
+				72EE69F12A750A2F009BA483 /* ToastViewExtension.swift in Sources */,
 				72CDEEDC2A4A7C1500FCABD2 /* NoticeViewModel.swift in Sources */,
 				72CDEF032A4A7C2400FCABD2 /* FavoritesView.swift in Sources */,
+				72EE69EB2A75097D009BA483 /* ToastModifier.swift in Sources */,
 				72CDEF0A2A4A7C2400FCABD2 /* SeongBukDepartView.swift in Sources */,
 				72CDEF0F2A4A7C2400FCABD2 /* SettingView.swift in Sources */,
 				727962692A56B3E100F398BF /* Schedule.swift in Sources */,
+				72EE69E92A750962009BA483 /* Toast.swift in Sources */,
 				72CDEEE12A4A7C1C00FCABD2 /* NoticeXMLParser.swift in Sources */,
 				72726EA52A4AA9EB008D40D5 /* AppDelegate.swift in Sources */,
 				72CDEF0B2A4A7C2400FCABD2 /* SeongBukArriveView.swift in Sources */,

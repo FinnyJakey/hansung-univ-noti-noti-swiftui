@@ -13,7 +13,10 @@ struct NoticeView: View {
     @State private var searchText: String = ""
     @State private var showingKeyword = false
     @State private var initFetched = false
-            
+    @State private var isSearching = false
+    @State private var searchAlertSeen = false
+    @State private var toast: Toast? = nil
+    
     var body: some View {
         NavigationView {
             List {
@@ -33,6 +36,10 @@ struct NoticeView: View {
                         }
                     }
                     .onAppear {
+                        if isSearching {
+                            return
+                        }
+                        
                         if notice == noticeVM.noticeItems[noticeVM.noticeItems.count - 10] {
                             Task {
                                 await noticeVM.fetchData()
@@ -74,6 +81,14 @@ struct NoticeView: View {
                         Text(noticeVM.error)
                     }
                 }
+                
+                if isSearching && noticeVM.noticeItems.isEmpty && noticeVM.state != .loading && noticeVM.state != .failed {
+                    HStack(alignment: .center) {
+                        Image(systemName: "x.circle")
+                            .foregroundColor(.red)
+                        Text("No search results found")
+                    }
+                }
             }
             .navigationTitle("공지사항")
             .toolbar {
@@ -82,13 +97,13 @@ struct NoticeView: View {
                         showingKeyword.toggle()
                     } label: {
                         Image(systemName: "bell")
-
+                        
                     }
                     .sheet(isPresented: $showingKeyword) {
-                            KeywordView()
-                                .presentationDetents([.medium, .large])
+                        KeywordView()
+                            .presentationDetents([.medium, .large])
                     }
-
+                    
                 }
             }
         }
@@ -101,13 +116,25 @@ struct NoticeView: View {
             }
         }
         .searchable(text: $searchText, prompt: "공지사항을 검색해보세요!")
-//        .onSubmit(of: .search, {
-//
-//        })
+        .onSubmit(of: .search) {
+            if !searchAlertSeen {
+                searchAlertSeen = true
+                toast = Toast(style: .info, message: "검색 결과는 최신 200개의 공지사항에만 반영됩니다.")
+            }
+            isSearching = true
+            noticeVM.clearAll()
+            Task {
+                await noticeVM.fetchData(200, searchText)
+            }
+        }
+        .toastView(toast: $toast)
         .refreshable {
+            isSearching = false
             noticeVM.clearAll()
             await noticeVM.fetchData()
         }
+        
+        
         
     }
     
