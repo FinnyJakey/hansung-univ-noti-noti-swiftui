@@ -11,7 +11,7 @@ class PersistenceController {
     static let shared = PersistenceController()
     let container: NSPersistentContainer
 
-    init(inMemory: Bool = true) { // TODO: Bool = false
+    init(inMemory: Bool = false) { // TODO: Bool = false
         container = NSPersistentContainer(name: "Favorite")
 
         if inMemory {
@@ -73,7 +73,6 @@ class PersistenceController {
             print("Could not fetch favorites from Core Data.")
         }
 
-        // return results
         return results
     }
     
